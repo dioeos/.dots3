@@ -1,7 +1,6 @@
 -- ========== --
 -- GLOBAL CONFIGURATIONS
 -- ========== --
-vim.g.mapleader = " "
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 vim.opt.swapfile = false
@@ -21,7 +20,10 @@ vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.termguicolors = true
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = {
+    prefix = "● ",
+    spacing = 4,
+  },
   signs = false,
   underline = true,
   update_in_insert = false,
