@@ -2,6 +2,8 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
+import "../.." as Root
+
 Item {
   id: clockRoot
 
@@ -17,13 +19,15 @@ Item {
       id: clockText
       anchors.centerIn: parent
       text: clockRoot.time
-      color: "white"
+      color: Root.ColorManager.fgPrimary
+      font.family: Root.FontManager.nothingFontFamily
+      font.pixelSize: Root.FontManager.fontNormal
     }
   }
 
   Process {
     id: dateProcess
-    command: ["date", "+%I:%M %p | %a %d"]
+    command: ["date", "+%I:%M %p - %a %d"]
     running: true
 
     stdout: StdioCollector {

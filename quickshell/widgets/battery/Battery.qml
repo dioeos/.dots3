@@ -3,6 +3,8 @@ import Quickshell.Io
 import QtQuick
 import Quickshell.Services.UPower
 
+import "../.." as Root
+
 Item {
   id: batteryRoot
 
@@ -10,7 +12,6 @@ Item {
 
   Rectangle {
     anchors.fill: parent
-    color: "green"
 
     Text {
       id: batteryText
@@ -18,7 +19,9 @@ Item {
       text: Math.round(UPower.displayDevice.percentage * 100) + "%"
       color: UPower.displayDevice.energyRate < 0
         ? "white"
-        : "green"
+        : Root.ColorManager.cyberGreen
+      font.family: Root.FontManager.nothingFontFamily
+      font.pixelSize: Root.FontManager.fontNormal
     }
   }
 }

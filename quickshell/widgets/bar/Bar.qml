@@ -46,7 +46,7 @@ Scope {
       anchors {
         right: parent.right
         verticalCenter: parent.verticalCenter
-        rightMargin: 50
+        rightMargin: 70
       }
     }
   }

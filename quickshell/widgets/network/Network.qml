@@ -2,6 +2,8 @@ import Quickshell
 import QtQuick
 import Quickshell.Networking
 
+import "../.." as Root
+
 Item {
     id: networkRoot
 
@@ -49,6 +51,8 @@ Item {
     Text {
         id: networkText
         text: wifiName + " (" + wifiSignal + "%)"
-        color: wifiName === "No WiFi" ? "red" : "white"
+        color: wifiName === "No WiFi" ? Root.ColorManager.netRed : Root.ColorManager.fgPrimary
+        font.family: Root.FontManager.nothingFontFamily
+        font.pixelSize: Root.FontManager.fontNormal
     }
 }
