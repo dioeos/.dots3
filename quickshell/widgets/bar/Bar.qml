@@ -3,6 +3,7 @@ import Quickshell.Io
 import QtQuick
 
 import "../clock" as ClockWidget
+import "../battery" as BatteryWidget
 
 Scope {
   id: barRoot
@@ -21,13 +22,22 @@ Scope {
     Rectangle {
       id: backgroundLayer
       anchors.fill: parent
-      color: "#FF0000"
+      color: "#191919"
     }
 
     //bar content
     ClockWidget.Clock {
-      id: clock
+      id: clockWidget
       anchors.centerIn: parent
+    }
+
+    BatteryWidget.Battery {
+      id: batteryWidget
+      anchors {
+        right: parent.right
+        verticalCenter: parent.verticalCenter
+        rightMargin: 30
+      }
     }
   }
 }
