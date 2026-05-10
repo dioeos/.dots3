@@ -123,6 +123,7 @@ alias ndot="nvim ~/dotfiles"
 alias j="cd .."
 alias 2j="cd ..."
 alias 3j="cd ...."
+alias cd="z"
 
 # ==========
 # STARTUP EDITS
@@ -138,3 +139,5 @@ PURE_PROMPT_SYMBOL="λ"
 fpath+=($HOME/tools/purezsh)
 autoload -U promptinit; promptinit
 prompt pure
+
+eval "$(zoxide init zsh)"
