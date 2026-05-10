@@ -23,7 +23,7 @@ Item {
 
   Process {
     id: dateProcess
-    command: ["date"]
+    command: ["date", "+%I : %M %p | %a %d"]
     running: true
 
     stdout: StdioCollector {
