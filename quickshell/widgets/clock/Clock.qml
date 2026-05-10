@@ -11,7 +11,7 @@ Item {
 
   Rectangle {
     anchors.fill: parent
-    color: "#0000FF"
+    color: "transparent"
 
     Text {
       id: clockText
@@ -23,7 +23,7 @@ Item {
 
   Process {
     id: dateProcess
-    command: ["date", "+%I : %M %p | %a %d"]
+    command: ["date", "+%I:%M %p | %a %d"]
     running: true
 
     stdout: StdioCollector {
