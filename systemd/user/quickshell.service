@@ -1,0 +1,13 @@
+[Unit]
+Description=Quickshell
+PartOf=graphical-session.target
+After=graphical-session.target sasha.service
+Requisite=graphical-session.target
+Requires=sasha.service
+
+[Install]
+WantedBy=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/quickshell
+Restart=on-failure
