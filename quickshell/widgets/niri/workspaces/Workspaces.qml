@@ -12,7 +12,8 @@ Item {
 
   Text {
     id: focusedText
-    text: SashaRoot.SashaManager.focusedWorkspaceId
+    // text: SashaRoot.SashaManager.focusedWorkspaceId
+    text: SashaRoot.SashaManager.hello
     color: Root.ColorManager.netRed
     font.family: Root.FontManager.ntype82FontFamily
     font.pixelSize: Root.FontManager.fontNormal

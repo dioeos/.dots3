@@ -4,9 +4,12 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
+import "workspacesUtil.js" as Util
+
 QtObject {
   id: sashaManagerRoot
 
+  property string hello
   property string focusedTitle
   property int focusedWorkspaceId: 1
 
@@ -21,6 +24,10 @@ QtObject {
       onRead: data => {
 
         const event = JSON.parse(data)
+
+        if (event.SashaWorkspacesChanged) {
+          sashaManagerRoot.hello = Util.hello()
+        }
 
         if (event.SashaWindowFocusedChanged) {
           sashaManagerRoot.focusedTitle =
