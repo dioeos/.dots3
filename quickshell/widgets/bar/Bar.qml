@@ -6,6 +6,7 @@ import "../clock" as ClockWidget
 import "../battery" as BatteryWidget
 import "../network" as NetworkWidget
 import "../niri/window" as NiriWindowWidget
+import "../niri/workspaces" as NiriWorkspacesWidget
 
 
 Scope {
@@ -59,6 +60,15 @@ Scope {
         left: parent.left
         verticalCenter: parent.verticalCenter
         leftMargin: 70
+      }
+    }
+
+    NiriWorkspacesWidget.Workspaces {
+      id: niriWorkspacesWidget
+      anchors {
+        left: parent.left
+        verticalCenter: parent.verticalCenter
+        leftMargin: 500
       }
     }
 

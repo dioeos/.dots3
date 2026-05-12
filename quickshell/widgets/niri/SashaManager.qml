@@ -8,7 +8,7 @@ QtObject {
   id: sashaManagerRoot
 
   property string focusedTitle
-  property int focusedWorkspaceId: -1
+  property int focusedWorkspaceId: 1
 
   property Socket socket: Socket {
     id: sashaSocket
@@ -25,6 +25,11 @@ QtObject {
         if (event.SashaWindowFocusedChanged) {
           sashaManagerRoot.focusedTitle =
             event.SashaWindowFocusedChanged.window_name ?? "No focused window"
+        }
+
+        if (event.SashaWorkspaceActivated) {
+          sashaManagerRoot.focusedWorkspaceId =
+            event.SashaWorkspaceActivated.id ?? 1
         }
 
         if (event.SashaWindowOpenedOrChanged) {
