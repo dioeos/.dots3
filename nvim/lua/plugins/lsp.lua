@@ -40,6 +40,8 @@ return {
         ensure_installed = {
           "lua_ls",
           "pyright",
+          "tailwindcss",
+          "ts_ls",
         },
       })
 
@@ -58,8 +60,18 @@ return {
         capabilities = capabilities,
       })
 
+      vim.lsp.config("tailwindcss", {
+        capabilities = capabilities
+      })
+
+      vim.lsp.config("ts_ls", {
+        capabilities = capabilities
+      })
+
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("pyright")
+      vim.lsp.enable("tailwindcss")
+      vim.lsp.enable("ts_ls")
     end
   }
 }
