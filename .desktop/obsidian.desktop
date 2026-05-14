@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Obsidian
+Comment=Obsidian Notetaking App
+Exec=/home/dio/AppImages/Obsidian-1.12.7.AppImage
+Icon=/home/dio/.local/share/icons/obsidian.png
+Type=Application
+Categories=Notes
