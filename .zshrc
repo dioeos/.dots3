@@ -125,6 +125,7 @@ alias 2j="cd ..."
 alias 3j="cd ...."
 alias cd="z"
 alias vv="cd ~/vaults/Vault && nvim ."
+alias vocab="cd ~/dotfiles/scripts/obsidian && ./add-vocab-cards.sh"
 
 # ==========
 # STARTUP EDITS

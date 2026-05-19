@@ -162,7 +162,7 @@ return {
       },
       notes_subdir = "Raw",
       templates = {
-        folder = "Templates"
+        folder = "Housekeeping/Templates"
       },
       picker = {
         name = "telescope.nvim"

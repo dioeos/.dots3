@@ -7,13 +7,23 @@ return {
       {
         "L3MON4D3/LuaSnip",
         version = "v2.4.0",
-        build = "make install_jsregexp"
+        build = "make install_jsregexp",
+        config = function ()
+          local snippets_path = "/home/dio/dotfiles/nvim/lua/snippets/"
+          require("luasnip.loaders.from_vscode").lazy_load()
+          require("luasnip.loaders.from_lua").lazy_load({
+            paths = { vim.fn.expand(snippets_path) }
+          })
+        end
       }
     },
     config = function()
       require("blink.cmp").setup({
         keymap = {
           preset = "default",
+        },
+        snippets = {
+          preset = "luasnip"
         },
         sources = {
           default = { "lsp", "path", "snippets", "buffer" },
