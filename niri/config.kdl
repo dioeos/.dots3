@@ -327,6 +327,19 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+  match app-id="satty"
+  open-floating true
+}
+
+window-rule {
+  match app-id="ghostty"
+
+  background-effect {
+    blur true
+  }
+}
+
 // window-rule {
 //     match app-id="keepassxc"
 //     open-floating true
@@ -394,6 +407,8 @@ binds {
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+
+    Mod+S { spawn-sh "grim -g \"$(slurp)\" - | satty --filename -"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
