@@ -65,10 +65,11 @@ Scope {
 
     NiriWorkspacesWidget.Workspaces {
       id: niriWorkspacesWidget
+      screenName: barRoot.targetScreen.name
       anchors {
         left: parent.left
         verticalCenter: parent.verticalCenter
-        leftMargin: 70
+        leftMargin: 30
       }
     }
 

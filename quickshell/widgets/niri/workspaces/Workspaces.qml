@@ -7,6 +7,8 @@ import "../../.." as Root
 Item {
     id: niriWorkspacesRoot
 
+    required property var screenName
+
     implicitWidth: row.implicitWidth
     implicitHeight: row.implicitHeight
 
@@ -15,7 +17,9 @@ Item {
         spacing: 8
 
         Repeater {
-            model: SashaRoot.SashaManager.workspaceIdxs
+            model: SashaRoot.SashaManager.workspaceIdxs.filter (
+              ws => ws.monitor === niriWorkspacesRoot.screenName
+            )
 
             delegate: Rectangle {
                 required property int modelData

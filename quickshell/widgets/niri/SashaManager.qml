@@ -42,7 +42,7 @@ QtObject {
 
         if (event.SashaWorkspaceActivated) {
           sashaManagerRoot.focusedWorkspaceIdx =
-            event.SashaWorkspaceActivated.idx ?? 1
+            event.SashaWorkspaceActivated.sasha_workspace.idx ?? 1
         }
 
         if (event.SashaWindowOpenedOrChanged) {
