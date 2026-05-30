@@ -143,3 +143,9 @@ autoload -U promptinit; promptinit
 prompt pure
 
 eval "$(zoxide init zsh)"
+
+# export GTK_IM_MODULE=ibus
+# export QT_IM_MODULE=ibus
+# export QT_IM_MODULES=wayland;ibus
+# export XMODIFIERS=@im=ibus
+# export GLFW_IM_MODULE=ibus

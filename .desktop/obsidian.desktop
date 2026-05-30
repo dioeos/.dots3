@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Obsidian
 Comment=Obsidian Notetaking App
-Exec=/home/dio/AppImages/Obsidian-1.12.7.AppImage
+Exec=env GTK_IM_MODULE=ibus QT_IM_MODULE=ibus XMODIFIERS=@im=ibus /home/dio/AppImages/Obsidian-1.12.7.AppImage --ozone-platform=x11
 Icon=/home/dio/.local/share/icons/obsidian.png
 Type=Application
 Categories=Notes
