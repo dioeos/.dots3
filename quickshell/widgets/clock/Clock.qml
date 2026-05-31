@@ -27,6 +27,7 @@ Item {
 
   Process {
     id: dateProcess
+    // command: ["env", "TZ=America/Denver", "date", "+%I:%M %p - %a %d"]
     command: ["date", "+%I:%M %p - %a %d"]
     running: true
 
