@@ -127,6 +127,9 @@ alias cd="z"
 alias vv="cd ~/vaults/Vault && nvim ."
 alias vocab="cd ~/dotfiles/scripts/obsidian && ./add-vocab-cards.sh"
 
+alias clear_cs="rm -rf ~/.local/share/Steam/steamapps/shadercache/730/*"
+alias tx="tuxedo"
+
 # ==========
 # STARTUP EDITS
 # ==========
