@@ -19,7 +19,7 @@ PopupWindow {
   Rectangle {
     id: content
     anchors.fill: parent
-    color: Root.ColorManager.cyberGreen
+    color: Root.ColorManager.data.primary
     border.width: 2
     border.color: "#afff4f"
 
@@ -36,7 +36,11 @@ PopupWindow {
           anchors.fill: parent
           onClicked: {
             Quickshell.execDetached({
-              command: ["awww", "img", "/home/dio/Backgrounds/green.png"]
+              command: [
+                "bash",
+                "-lc",
+                "/home/dio/dotfiles/scripts/system/update-wall.sh /home/dio/Backgrounds/green.png && /home/dio/dotfiles/scripts/system/switchwall.sh"
+              ]
             })
           }
           Image {
@@ -54,11 +58,15 @@ PopupWindow {
           anchors.fill: parent
           onClicked: {
             Quickshell.execDetached({
-              command: ["awww", "img", "/home/dio/Backgrounds/max-color.png"]
+              command: [
+                "bash",
+                "-lc",
+                "/home/dio/dotfiles/scripts/system/update-wall.sh /home/dio/Backgrounds/blue-eyes.png && /home/dio/dotfiles/scripts/system/switchwall.sh"
+              ]
             })
           }
           Image {
-            source: "/home/dio/Backgrounds/max-color.png"
+            source: "/home/dio/Backgrounds/blue-eyes.png"
             anchors.fill: parent
             fillMode: Image.PreserveAspectCrop
           }
@@ -73,7 +81,11 @@ PopupWindow {
           anchors.fill: parent
           onClicked: {
             Quickshell.execDetached({
-              command: ["awww", "img", "/home/dio/Backgrounds/green-eyes.png"]
+              command: [
+                "bash",
+                "-lc",
+                "/home/dio/dotfiles/scripts/system/update-wall.sh /home/dio/Backgrounds/green-eyes.png && /home/dio/dotfiles/scripts/system/switchwall.sh"
+              ]
             })
           }
           Image {
@@ -91,7 +103,11 @@ PopupWindow {
           anchors.fill: parent
           onClicked: {
             Quickshell.execDetached({
-              command: ["awww", "img", "/home/dio/Backgrounds/black-abstract.png"]
+              command: [
+                "bash",
+                "-lc",
+                "/home/dio/dotfiles/scripts/system/update-wall.sh /home/dio/Backgrounds/black-abstract.png && /home/dio/dotfiles/scripts/system/switchwall.sh"
+              ]
             })
           }
           Image {
