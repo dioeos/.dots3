@@ -6,6 +6,7 @@ import "../.." as Root
 
 PopupWindow {
   id: popupWindow
+
   property bool shown: false
   visible: shown
 
@@ -14,122 +15,94 @@ PopupWindow {
   height: anchor.window.screen.height
   color: "transparent"
 
-  MouseArea {
-    anchors.fill: parent
-    onClicked: popupWindow.shown = !popupWindow.shown
+  ListModel {
+    id: wallpaperModel
+
+    ListElement { path: "/home/dio/Backgrounds/green.png" }
+    ListElement { path: "/home/dio/Backgrounds/green-eyes.png" }
+    ListElement { path: "/home/dio/Backgrounds/black-abstract.png" }
   }
 
-  Rectangle {
-    id: content
+  MouseArea {
+    anchors.fill: parent
+    onClicked: popupWindow.shown = false
+  }
+
+  Item {
+    id: panel
 
     width: parent.width * 0.8
     height: parent.height * 0.15
     z: 2
+
     anchors.horizontalCenter: parent.horizontalCenter
     anchors.verticalCenter: parent.verticalCenter
 
-    color: Root.ColorManager.data.primary
-    border.width: 2
-    border.color: "#afff4f"
+    Rectangle {
+      anchors.fill: parent
+      color: "transparent"
+      border.width: 2
+      border.color: "#afff4f"
+    }
 
-    Row {
+    MouseArea {
+      anchors.fill: parent
+      onClicked: mouse.accepted = true
+    }
+
+    Flickable {
+      id: flick
+
       anchors.fill: parent
       anchors.margins: 2
-      spacing: 0
+      clip: true
 
-      Rectangle {
-        width: parent.width / 4
-        height: parent.height
+      flickableDirection: Flickable.HorizontalFlick
+      boundsBehavior: Flickable.StopAtBounds
 
-        MouseArea {
-          anchors.fill: parent
-          onClicked: {
-            Quickshell.execDetached({
-              command: [
-                "bash",
-                "-lc",
-                "/home/dio/dotfiles/scripts/system/update-wall.sh /home/dio/Backgrounds/green.png && /home/dio/dotfiles/scripts/system/switchwall.sh"
-              ]
-            })
-          }
-          Image {
-            source: "/home/dio/Backgrounds/green.png"
-            anchors.fill: parent
-            fillMode: Image.PreserveAspectCrop
-          }
-        }
-      }
-      Rectangle {
-        width: parent.width / 4
-        height: parent.height
+      contentWidth: row.implicitWidth
+      contentHeight: height
 
-        MouseArea {
-          anchors.fill: parent
-          onClicked: {
-            Quickshell.execDetached({
-              command: [
-                "bash",
-                "-lc",
-                "/home/dio/dotfiles/scripts/system/update-wall.sh /home/dio/Backgrounds/blue-eyes.png && /home/dio/dotfiles/scripts/system/switchwall.sh"
-              ]
-            })
-          }
-          Image {
-            source: "/home/dio/Backgrounds/blue-eyes.png"
-            anchors.fill: parent
-            fillMode: Image.PreserveAspectCrop
-          }
-        }
-      }
+      Row {
+        id: row
 
-      Rectangle {
-        width: parent.width / 4
-        height: parent.height
+        height: flick.height
+        spacing: 0
 
-        MouseArea {
-          anchors.fill: parent
-          onClicked: {
-            Quickshell.execDetached({
-              command: [
-                "bash",
-                "-lc",
-                "/home/dio/dotfiles/scripts/system/update-wall.sh /home/dio/Backgrounds/green-eyes.png && /home/dio/dotfiles/scripts/system/switchwall.sh"
-              ]
-            })
-          }
-          Image {
-            source: "/home/dio/Backgrounds/green-eyes.png"
-            anchors.fill: parent
-            fillMode: Image.PreserveAspectCrop
+        Repeater {
+          model: wallpaperModel
+
+          delegate: Rectangle {
+            width: flick.width / 3
+            height: flick.height
+
+            color: "transparent"
+            clip: true
+
+            Image {
+              anchors.fill: parent
+              source: path
+              fillMode: Image.PreserveAspectCrop
+            }
+
+            MouseArea {
+              anchors.fill: parent
+
+              onClicked: {
+                Quickshell.execDetached({
+                  command: [
+                    "bash",
+                    "-lc",
+                    "/home/dio/dotfiles/scripts/system/update-wall.sh '" + path + "' && /home/dio/dotfiles/scripts/system/switchwall.sh"
+                  ]
+                })
+
+                popupWindow.shown = false
+              }
+            }
           }
         }
       }
-      Rectangle {
-        width: parent.width / 4
-        height: parent.height
-
-        MouseArea {
-          anchors.fill: parent
-          onClicked: {
-            Quickshell.execDetached({
-              command: [
-                "bash",
-                "-lc",
-                "/home/dio/dotfiles/scripts/system/update-wall.sh /home/dio/Backgrounds/black-abstract.png && /home/dio/dotfiles/scripts/system/switchwall.sh"
-              ]
-            })
-          }
-          Image {
-            source: "/home/dio/Backgrounds/black-abstract.png"
-            anchors.fill: parent
-            fillMode: Image.PreserveAspectCrop
-          }
-        }
-      }
-
-
     }
   }
-
-  
 }
