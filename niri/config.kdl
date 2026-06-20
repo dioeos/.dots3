@@ -591,15 +591,15 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
-    Mod+7 { focus-workspace 7; }
-    Mod+8 { focus-workspace 8; }
-    Mod+9 { focus-workspace 9; }
+    // Mod+1 { focus-workspace 1; }
+    // Mod+2 { focus-workspace 2; }
+    // Mod+3 { focus-workspace 3; }
+    // Mod+4 { focus-workspace 4; }
+    // Mod+5 { focus-workspace 5; }
+    // Mod+6 { focus-workspace 6; }
+    // Mod+7 { focus-workspace 7; }
+    // Mod+8 { focus-workspace 8; }
+    // Mod+9 { focus-workspace 9; }
     Mod+Ctrl+1 { move-column-to-workspace 1; }
     Mod+Ctrl+2 { move-column-to-workspace 2; }
     Mod+Ctrl+3 { move-column-to-workspace 3; }
@@ -700,8 +700,6 @@ binds {
 
 
     // === SASHA CONFIG ===
-    // Super+M { spawn "cargo-sasha" "mark-window" "1"; }
-    // Super+M { spawn-sh "/home/dio/.cargo/bin/cargo-sasha mark-window 1 >> /tmp/sasha-bind.log 2>&1"; }
     Super+Shift+1 { spawn "cargo-sasha" "mark-window" "1"; }
     Super+Shift+2 { spawn "cargo-sasha" "mark-window" "2"; }
     Super+Shift+3 { spawn "cargo-sasha" "mark-window" "3"; }
@@ -711,4 +709,14 @@ binds {
     Super+Shift+7 { spawn "cargo-sasha" "mark-window" "7"; }
     Super+Shift+8 { spawn "cargo-sasha" "mark-window" "8"; }
     Super+Shift+9 { spawn "cargo-sasha" "mark-window" "9"; }
+
+    Super+1 { spawn "cargo-sasha" "focus-window" "1"; }
+    Super+2 { spawn "cargo-sasha" "focus-window" "2"; }
+    Super+3 { spawn "cargo-sasha" "focus-window" "3"; }
+    Super+4 { spawn "cargo-sasha" "focus-window" "4"; }
+    Super+5 { spawn "cargo-sasha" "focus-window" "5"; }
+    Super+6 { spawn "cargo-sasha" "focus-window" "6"; }
+    Super+7 { spawn "cargo-sasha" "focus-window" "7"; }
+    Super+8 { spawn "cargo-sasha" "focus-window" "8"; }
+    Super+9 { spawn "cargo-sasha" "focus-window" "9"; }
 }
