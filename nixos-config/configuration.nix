@@ -29,7 +29,7 @@
     ghostty
   ];
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v1.0.6-change-time";
+  system.nixos.label = "merle-v2.0.0";
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
