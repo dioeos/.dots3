@@ -9,14 +9,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ self, nixpkgs, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-     system = "x86_64-linux";
-     modules = [
-       ./configuration.nix
-       inputs.disko.nixosModules.disko
-       inputs.home-manager.nixosModules.default
-     ];
+  outputs = { self, nixpkgs, ... }@inputs: 
+    
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+       extraSpecialArgs = {inherit inputs;};
+       modules = [
+         ./configuration.nix
+         inputs.disko.nixosModules.disko
+         inputs.home-manager.nixosModules.default
+       ];
+      };
     };
-  };
 }
