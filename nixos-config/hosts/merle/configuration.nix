@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../../modules/nixos/disko-config.nix
       ../../modules/nixos/main-user.nix
+      ../../modules/nixos/xremap.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -43,7 +44,7 @@
     ghostty
   ];
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.0.1-home-manager-and-format";
+  system.nixos.label = "merle-v2.0.2-xremap";
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;

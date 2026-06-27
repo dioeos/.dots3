@@ -21,7 +21,7 @@ in
       initialPassword = "password";
       description = "user of merle";
       shell = pkgs.zsh;
-      extraGroups = [ "wheel" "networkmanager" "input" ];
+      extraGroups = [ "wheel" "networkmanager" "input" "uinput" ];
     };
   };
 }
