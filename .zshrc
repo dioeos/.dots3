@@ -116,6 +116,7 @@ alias gp="git push"
 # ==========
 # GENERAL
 # ==========
+alias vih="nvim ."
 alias rez="source ~/.zshrc"
 alias nzsh="nvim ~/dotfiles/.zshrc"
 alias cdot="cd ~/dotfiles"
@@ -129,6 +130,7 @@ alias vocab="cd ~/dotfiles/scripts/obsidian && ./add-vocab-cards.sh"
 
 alias clear_cs="rm -rf ~/.local/share/Steam/steamapps/shadercache/730/*"
 alias tx="tuxedo"
+alias cp-env="~/dotfiles/scripts/system/cp-env-worktree.sh"
 
 # ==========
 # STARTUP EDITS
@@ -151,3 +153,11 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export GLFW_IM_MODULE=ibus
+
+# Added by flyctl installer
+export FLYCTL_INSTALL="/home/dio/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
