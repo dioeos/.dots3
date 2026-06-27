@@ -1,6 +1,10 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    ../../modules/home-manager/zsh.nix
+  ];
+
   home.username = "dio";
   home.homeDirectory = "/home/dio";
 
