@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/zsh/zsh-config.nix
   ];
 
   home.username = "dio";
