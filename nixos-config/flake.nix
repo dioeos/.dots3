@@ -15,8 +15,13 @@
       system = "x86_64-linux";
     in
     {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-       extraSpecialArgs = {inherit inputs;};
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+       inherit system;
+
+       specialArgs = {
+         inherit inputs;
+       };
+
        modules = [
          ./configuration.nix
          inputs.disko.nixosModules.disko
