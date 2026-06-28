@@ -4,6 +4,8 @@
   imports = [
     ../../modules/home-manager/zsh/zsh-config.nix
     ../../modules/home-manager/ghostty/ghostty-config.nix
+    ../../modules/home-manager/tmux/tmux-config.nix
+    ../../modules/home-manager/nixcats/nixcats-config.nix
   ];
 
   home.username = "dio";

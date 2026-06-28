@@ -15,7 +15,7 @@
     ];
 
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.0.5-ghostty-visuals";
+  system.nixos.label = "merle-v2.1.8-working-nixcat-nvim";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
@@ -38,7 +38,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    vim
     alacritty
     fuzzel
     xwayland-satellite
@@ -46,6 +45,11 @@
     pavucontrol
     ghostty
     discord
+    lazygit
+  ];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.iosevka
   ];
 
   # Configure network connections interactively with nmcli or nmtui.
@@ -80,8 +84,6 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  #services.pulseaudio.enable = true;
-  # OR
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -99,18 +101,7 @@
       enable = true;
       package = pkgs.uwsm;
     };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
   };
-
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  # environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  # ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
