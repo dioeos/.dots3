@@ -10,6 +10,8 @@
     };
 
     xremap.url = "github:xremap/nix-flake";
+
+    nixCats.url = "github:BirdeeHub/nixCats-nvim";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 
