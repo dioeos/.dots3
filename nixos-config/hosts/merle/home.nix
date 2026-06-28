@@ -7,6 +7,7 @@
     ../../modules/home-manager/tmux/tmux-config.nix
     ../../modules/home-manager/nixcats/nixcats-config.nix
     ../../modules/home-manager/quickshell/quickshell-config.nix
+    ../../modules/home-manager/niri/niri-config.nix
   ];
 
   home.username = "dio";
