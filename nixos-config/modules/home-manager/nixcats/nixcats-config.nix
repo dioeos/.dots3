@@ -43,6 +43,7 @@ in
           optionalPlugins = {
             tools = with pkgs.vimPlugins; [
               themery-nvim
+              oil-nvim
             ];
           };
         };
