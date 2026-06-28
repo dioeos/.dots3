@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/home-manager/zsh/zsh-config.nix
+    ../../modules/home-manager/ghostty/ghostty-config.nix
   ];
 
   home.username = "dio";

@@ -14,7 +14,10 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  networking.hostName = "merle"; # Define your hostname.
+  system.nixos.label = "merle-v2.0.5-ghostty-visuals";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
@@ -42,9 +45,8 @@
     firefox
     pavucontrol
     ghostty
+    discord
   ];
-  networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.0.2-xremap";
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
