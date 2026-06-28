@@ -48,6 +48,10 @@
     lazygit
   ];
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.iosevka
+  ];
+
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
