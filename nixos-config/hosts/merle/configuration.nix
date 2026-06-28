@@ -15,7 +15,7 @@
     ];
 
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.2.0-quickshell-niri-nix-spotify";
+  system.nixos.label = "merle-v2.3.0-steam";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
@@ -103,7 +103,21 @@
       enable = true;
       package = pkgs.uwsm;
     };
+
+    steam = {
+      enable = true;
+      package = pkgs.steam.override {
+        extraArgs = "-system-composer -cef-disable-gpu";
+      };
+    };
   };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
