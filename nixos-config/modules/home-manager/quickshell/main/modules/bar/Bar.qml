@@ -34,10 +34,24 @@ Scope {
         anchors.leftMargin: 12
         spacing: 8
 
-        Text {
-          text: "workspaces"
-          color: "white"
-        }
+        // Repeater {
+        //   model: ["1", "2", "3", "4", "5"]
+        //
+        //   delegate: Rectangle {
+        //     radius: 6
+        //     color: "#ff0000"
+        //
+        //     implicitWidth: workspaceText.implicitWidth + 12
+        //     implicitHeight: workspaceText.implicitHeight + 6
+        //
+        //     Text {
+        //       id: workspaceText
+        //       anchors.centerIn: parent
+        //       text: modelData
+        //       color: "white"
+        //     }
+        //   }
+        // } 
       }
 
       Row {
@@ -46,10 +60,38 @@ Scope {
         anchors.verticalCenter: parent.verticalCenter
         spacing: 8
 
-        Text {
-          text: "clock / focused window"
-          color: "white"
+        Rectangle {
+          id: clockWrapper
+          color: "#0000ff"
+          radius: 12
+
+          implicitWidth: clockModule.implicitWidth + 8
+          implicitHeight: clockModule.implicitHeight + 16
+
+          ClockModule.Clock {
+            id: clockModule
+            anchors.centerIn: parent
+          }
         }
+
+        // Repeater {
+        //   model: ["1", "2", "3", "4", "5"]
+        //
+        //   delegate: Rectangle {
+        //     radius: 6
+        //     color: "#ff0000"
+        //
+        //     implicitWidth: workspaceText.implicitWidth + 12
+        //     implicitHeight: workspaceText.implicitHeight + 6
+        //
+        //     Text {
+        //       id: workspaceText
+        //       anchors.centerIn: parent
+        //       text: modelData
+        //       color: "white"
+        //     }
+        //   }
+        // } 
       }
 
       Row {
@@ -59,15 +101,23 @@ Scope {
         anchors.rightMargin: 12
         spacing: 8
 
-        Text {
-          text: "battery"
-          color: "white"
-        }
-
-        Text {
-          text: "wifi"
-          color: "white"
-        }
+        // Repeater {
+        //   model: ["1", "2", "3", "4", "5"]
+        //
+        //   delegate: Rectangle {
+        //     radius: 6
+        //     color: "#ff0000"
+        //
+        //     implicitWidth: workspaceText.implicitWidth + 12
+        //     implicitHeight: workspaceText.implicitHeight + 6
+        //
+        //     Text {
+        //       id: workspaceText
+        //       anchors.centerIn: parent
+        //       text: modelData
+        //       color: "white"
+        //     }
+        //   }
       }
     }
   }
