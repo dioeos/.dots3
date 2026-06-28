@@ -46,6 +46,7 @@
     ghostty
     discord
     lazygit
+    spotify
   ];
 
   fonts.packages = with pkgs; [
