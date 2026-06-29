@@ -27,6 +27,7 @@
     ../../modules/home-manager/discord/discord-config.nix
     ../../modules/home-manager/awww/awww-config.nix
     ../../modules/home-manager/obsidian/obsidian-config.nix
+    ../../modules/home-manager/slack/slack-config.nix
   ];
 
   home.username = "dio";
