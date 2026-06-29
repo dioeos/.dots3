@@ -10,8 +10,11 @@
     };
 
     xremap.url = "github:xremap/nix-flake";
-
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs: 
@@ -30,7 +33,7 @@
          ./hosts/merle/configuration.nix
          inputs.disko.nixosModules.disko
          inputs.home-manager.nixosModules.default
-	 inputs.xremap.nixosModules.default
+         inputs.xremap.nixosModules.default
        ];
       };
     };

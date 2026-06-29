@@ -4,7 +4,7 @@
   imports = [
     ./aliases.nix
     ./zprofile.nix
-    ./startup.nix
+    ./plugins.nix
   ];
 
   programs.zsh = {

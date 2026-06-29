@@ -69,6 +69,36 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+
+overview {
+  backdrop-color "#050510cc"
+}
+
+layer-rule {
+  match namespace="^wallpaper$"
+  place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="^awww-daemon$"
+  place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="quickshell_bar"
+  background-effect {
+    blur true
+  }
+}
+
+window-rule {
+  match app-id="ghostty"
+
+  background-effect {
+    blur true
+  }
+}
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -269,7 +299,8 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+spawn-at-startup "quickshell" "-c" "main"
+spawn-at-startup "awww-daemon"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"

@@ -19,6 +19,18 @@
     ];
   };
 
+  ashen = pkgs.vimUtils.buildVimPlugin {
+    pname = "ashen.nvim";
+    version = "unstable";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "ficd0";
+      repo = "ashen.nvim";
+      rev = "bfb04bd50b69d863469b2deb9fb361cf0d945ba7";
+      hash = "sha256-yC9V58zieE8YvEuAnJhEOgONrudUJgQFqC59cKo97/g=";
+    };
+  };
+
   nvimgelion = pkgs.vimUtils.buildVimPlugin {
     pname = "nvimgelion";
     version = "unstable";

@@ -12,16 +12,20 @@
 
     # === BROWSERS ===
     ../../modules/home-manager/firefox/firefox-config.nix
+    ../../modules/home-manager/zen-browser/zen-browser-config.nix
+    ../../modules/home-manager/chrome/chrome-config.nix
 
     # === TOOLS ===
     ../../modules/home-manager/niri/niri-config.nix
     ../../modules/home-manager/pavucontrol/pavucontrol-config.nix
     ../../modules/home-manager/lazygit/lazygit-config.nix
+    ../../modules/home-manager/zoxide/zoxide-config.nix
 
     # === EXTRAS ===
     ../../modules/home-manager/quickshell/quickshell-config.nix
     ../../modules/home-manager/spotify/spotify-config.nix
     ../../modules/home-manager/discord/discord-config.nix
+    ../../modules/home-manager/awww/awww-config.nix
   ];
 
   home.username = "dio";

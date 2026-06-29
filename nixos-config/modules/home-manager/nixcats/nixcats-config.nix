@@ -33,6 +33,7 @@ in
             ] ++ [
               customColorschemes.vesper
               customColorschemes.nvimgelion
+              customColorschemes.ashen
             ];
 
             lazy = with pkgs.vimPlugins; [

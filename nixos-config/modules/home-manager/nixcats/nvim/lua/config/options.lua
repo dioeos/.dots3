@@ -6,4 +6,4 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.termguicolors =true
-vim.cmd.colorscheme("vesper")
+vim.cmd.colorscheme("ashen")
