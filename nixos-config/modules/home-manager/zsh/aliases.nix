@@ -7,5 +7,6 @@
     vi = "nvim . ";
     lg = "lazygit";
     rez = "source ~/.zshrc";
+    cd = "z";
   };
 }

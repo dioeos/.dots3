@@ -17,6 +17,7 @@
     ../../modules/home-manager/niri/niri-config.nix
     ../../modules/home-manager/pavucontrol/pavucontrol-config.nix
     ../../modules/home-manager/lazygit/lazygit-config.nix
+    ../../modules/home-manager/zoxide/zoxide-config.nix
 
     # === EXTRAS ===
     ../../modules/home-manager/quickshell/quickshell-config.nix
