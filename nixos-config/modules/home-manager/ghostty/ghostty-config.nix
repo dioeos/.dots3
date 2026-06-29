@@ -18,7 +18,7 @@
       font-family-italic = "Iosevka NFM Italic";
       font-family-bold-italic = "Iosevka NFM Bold Italic";
       background-blur = true;
-      theme = "Tomorrow Night Burns";
+      # theme = "Tomorrow Night Burns";
     };
   };
 }

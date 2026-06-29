@@ -18,6 +18,11 @@
       inputs.home-manager.nixosModules.default
     ];
 
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
+  virtualisation.docker.enable = true;
+
   networking.hostName = "merle"; # Define your hostname.
   system.nixos.label = "merle-v2.5.0-obsidian";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -47,6 +52,9 @@
     git
     xwayland-satellite
     fuzzel
+    udiskie
+    ntfs3g
+    exfatprogs
   ];
 
   fonts.packages = with pkgs; [

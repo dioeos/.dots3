@@ -20,6 +20,11 @@
     ../../modules/home-manager/pavucontrol/pavucontrol-config.nix
     ../../modules/home-manager/lazygit/lazygit-config.nix
     ../../modules/home-manager/zoxide/zoxide-config.nix
+    ../../modules/home-manager/nautilus/nautilus-config.nix
+    ../../modules/home-manager/gnumake/gnumake-config.nix
+    ../../modules/home-manager/nodejs/nodejs-config.nix
+    ../../modules/home-manager/meld/meld-config.nix
+    ../../modules/home-manager/tig/tig-config.nix
 
     # === EXTRAS ===
     ../../modules/home-manager/quickshell/quickshell-config.nix
