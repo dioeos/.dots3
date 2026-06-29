@@ -6,16 +6,20 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
       ../../modules/nixos/disko-config.nix
       ../../modules/nixos/main-user.nix
-      ../../modules/nixos/xremap.nix
+      ../../modules/nixos/xremap-config.nix
+      ../../modules/nixos/steam-config.nix
+      ../../modules/nixos/zsh-config.nix
+      ../../modules/nixos/niri-config.nix
+      ../../modules/nixos/uwsm-config.nix
       inputs.home-manager.nixosModules.default
     ];
 
   networking.hostName = "merle"; # Define your hostname.
-  system.nixos.label = "merle-v2.3.0-steam";
+  system.nixos.label = "merle-v2.3.1-pkgs-refactor";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
@@ -30,6 +34,9 @@
   main-user.userName = "dio";
 
   home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+
     extraSpecialArgs = { inherit inputs; };
     users = {
       "dio" = import ./home.nix;
@@ -38,16 +45,8 @@
 
   environment.systemPackages = with pkgs; [
     git
-    alacritty
-    fuzzel
     xwayland-satellite
-    firefox
-    pavucontrol
-    ghostty
-    discord
-    lazygit
-    spotify
-    quickshell
+    fuzzel
   ];
 
   fonts.packages = with pkgs; [
@@ -94,30 +93,10 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
-  # programs.firefox.enable = true;
-  programs = {
-    zsh.enable = true;
-    niri.enable = true;
-    uwsm = {
-      enable = true;
-      package = pkgs.uwsm;
-    };
-
-    steam = {
-      enable = true;
-      package = pkgs.steam.override {
-        extraArgs = "-system-composer -cef-disable-gpu";
-      };
-    };
-  };
-
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -161,6 +140,5 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "26.05"; # Did you read the comment?
-
 }
 

@@ -14,11 +14,12 @@
     config = {
       modmap = [
         {
-	  name = "Global";
-	  remap = {
-	    CapsLock = "Esc";
-	  };
-	}
+          name = "Global";
+          remap = {
+            CapsLock = "Esc";
+            Esc = "CapsLock";
+          };
+        }
       ];
     };
   };
