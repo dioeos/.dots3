@@ -13,6 +13,7 @@
     # === BROWSERS ===
     ../../modules/home-manager/firefox/firefox-config.nix
     ../../modules/home-manager/zen-browser/zen-browser-config.nix
+    ../../modules/home-manager/chrome/chrome-config.nix
 
     # === TOOLS ===
     ../../modules/home-manager/niri/niri-config.nix
