@@ -25,6 +25,7 @@
     ../../modules/home-manager/nodejs/nodejs-config.nix
     ../../modules/home-manager/meld/meld-config.nix
     ../../modules/home-manager/tig/tig-config.nix
+    ../../modules/home-manager/vicinae/vicinae-config.nix
 
     # === EXTRAS ===
     ../../modules/home-manager/quickshell/quickshell-config.nix

@@ -51,7 +51,6 @@
   environment.systemPackages = with pkgs; [
     git
     xwayland-satellite
-    fuzzel
     udiskie
     ntfs3g
     exfatprogs
