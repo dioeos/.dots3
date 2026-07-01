@@ -31,6 +31,8 @@ in
             colorschemes = with pkgs.vimPlugins; [
               kanagawa-nvim
             ] ++ [
+              telescope-nvim
+              plenary-nvim
               customColorschemes.vesper
               customColorschemes.nvimgelion
               customColorschemes.ashen
@@ -46,8 +48,10 @@ in
               themery-nvim
               oil-nvim
               flash-nvim
-              telescope-nvim
-              plenary-nvim
+            ];
+
+            notes = with pkgs.vimPlugins; [
+              obsidian-nvim
             ];
           };
 
@@ -70,6 +74,7 @@ in
             colorschemes = true;
             lazy = true;
             tools = true;
+            notes = true;
           };
         };
       };

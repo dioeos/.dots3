@@ -2,8 +2,25 @@
 
 let
   plugins = import ./plugins.nix { inherit pkgs; };
+  vault = "merle-vault";
+  configDir = "${vault}/.obsidian";
 in
 {
+  home.file."${vault}/Housekeeping/Templates" = {
+    source = ./templates;
+    recursive = true;
+  };
+
+  home.file."${configDir}/app.json".text = builtins.toJSON {
+    vimMode = true;
+    newFileLocation = "folder";
+    newFileFolderPath = "Raw";
+    attachmentFolderPath = "Housekeeping/Attachments";
+    showUnsupportedFiles = true;
+    alwaysUpdateLinks = true;
+  };
+
+
   programs.obsidian = {
     enable = true;
 
