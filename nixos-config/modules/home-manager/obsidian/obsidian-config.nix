@@ -11,6 +11,11 @@ in
     recursive = true;
   };
 
+  home.file."${configDir}/templates.json".text = builtins.toJSON {
+    folder = "Housekeeping/Templates";
+    
+  };
+
   home.file."${configDir}/app.json".text = builtins.toJSON {
     vimMode = true;
     newFileLocation = "folder";
